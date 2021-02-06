@@ -1,0 +1,17 @@
+@media screen and (max-width: 1210px) {
+    .mypc  {
+        display: none !important;
+    }
+    .mybg  {
+        background: #f00;
+    }
+}
+
+@media (min-width: 1211px) {
+    .myphone  {
+        display: none !important;
+    }
+    .mybg  {
+        background: #24f;
+    }
+}
