@@ -1,27 +1,22 @@
-function fuckyou(){
-     window.close(); //关闭当前窗口(防抽)
-     window.location="https://www.ysni.cn/usr/themes/Typecho-Joe-Theme/console.html"; //将当前窗口跳转置空白页about:blank
+document.onmousedown = function mdClick(event) {
+    var e = event || window.event || arguments.callee.caller.arguments[0];
+    if (e.button == 2 || e.button == 3) {
+        mAlert();
+    }
 }
-function ck() {
-     console.profile();
-     console.profileEnd();
-     //我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
-     if(console.clear) { console.clear() };
-     		if (typeof console.profiles =="object"){
-    				return console.profiles.length > 0;
-            }
-	 }
-function hehe(){
-	 if( (window.console && (console.firebug || console.table && /firebug/i.test(console.table()) )) || (typeof opera == 'object' && typeof opera.postError == 'function' && console.profile.length > 0)){
-	        fuckyou();
-	 }
-	 if(typeof console.profiles =="object"&&console.profiles.length > 0){
-			fuckyou();
-	 }
+
+document.oncontextmenu = new Function("return false;");
+
+document.onkeydown = document.onkeyup = document.onkeypress = function(event) {
+    var e = event || window.event || arguments.callee.caller.arguments[0];
+
+    if (e && e.keyCode == 123) {
+            mAlert();
+            e.returnValue = false;
+            return (false);
+    }
 }
-hehe();
-window.onresize = function(){
-	 if((window.outerHeight-window.innerHeight)>200)
-	 		//判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
-     		fuckyou();
+
+function mAlert() {
+    layer.msg("你说彼岸灯火，心之所向；后来渔舟晚唱，烟雨彷徨。 你说水静莲香，惠风和畅；后来云遮薄月，清露如霜。 你说幽窗棋罢，再吐衷肠；后来风卷孤松，雾漫山冈。 你说红袖佯嗔，秋波流转思张敞；后来黛眉长敛，春色飘零别阮郎。");
 }
