@@ -25,14 +25,6 @@ $.getJSON('https://cdn.jsdelivr.net/gh/cy-j/ysni@5.0.0/jcweb/ysni/photos.json?v=
 
   }
   
-  //定位到对应的
-  var p = gather.demo1.find('p').eq(index);
-  var top = p.parent().position().top;
-  var ol = gather.demo1.find('.layui-code-ol');
-  
-  gather.demo1.find('.layui-code-ol').animate({
-    scrollTop: ol.scrollTop() + top
-  }, 0);
 });
 
 }();
